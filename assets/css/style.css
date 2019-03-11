@@ -1,0 +1,44 @@
+body {
+    background-image: url("https://www.pixelstalk.net/wp-content/uploads/2016/04/Logo-star-trek-wallpapers.png");
+    background-repeat: no-repeat;
+}
+
+#container {
+    /* background-image: url("https://www.pixelstalk.net/wp-content/uploads/2016/04/Logo-star-trek-wallpapers.png"); */
+    height: 1980px;
+    width: 1080px;
+    text-align: center;
+    z-index: 1;
+}
+
+.display-4 {
+    font-size: 50px;
+    font-weight: bold; 
+    font-style: normal;
+    text-align: center;
+    font-family: 'HortaRegular'; 
+}
+
+.jumbotron {
+    opacity: 0.5;
+}
+
+.lead {
+    font-size: 25px;
+    font-weight: bold; 
+    font-style: normal;
+    text-align: center;
+    font-family: 'HortaRegular'; 
+}
+
+.row, .col {
+    background-color: grey;
+    height: 500px;
+    width: 500px;
+    justify-content: end;
+}
+
+.question {
+    color: white;
+    font-size: 1.4em;
+}
