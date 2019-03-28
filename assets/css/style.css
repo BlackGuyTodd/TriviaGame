@@ -42,3 +42,49 @@ body {
     color: white;
     font-size: 1.4em;
 }
+
+#start {
+    padding: 50px;
+    text-align: center;
+    background-color: grey;
+}
+
+.btn-success {
+    color: #fff;
+    background-color: grey;
+    border-color: grey;
+    font-size: 50px;
+    font-weight: bold; 
+    font-style: normal;
+    text-align: center;
+    font-family: 'HortaRegular'; 
+}
+.btn-success:hover {
+    color: #fff;
+    background-color: grey;
+    border-color: grey;
+}
+
+.btn-success.disabled,
+.btn-success:disabled {
+    color: #fff;
+    background-color: whitesmoke;
+    border-color: whitesmoke;
+}
+.btn-success:not(:disabled):not(.disabled).active,
+.btn-success:not(:disabled):not(.disabled):active,
+.show > .btn-success.dropdown-toggle {
+    color: whitesmoke;
+    background-color: whitesmoke;
+    border-color: whitesmoke;
+}
+
+.btn-success:not(:disabled):not(.disabled).active:focus,
+.btn-success:not(:disabled):not(.disabled):active:focus,
+.show > .btn-success.dropdown-toggle:focus {
+    box-shadow: 0 0 0 .2rem whitesmoke;
+}
+
+.timer-color {
+    color: white;
+}
