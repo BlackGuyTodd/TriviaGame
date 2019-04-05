@@ -111,7 +111,7 @@ $(document).ready(function () {
         countDownTimer--;
         console.log(countDownTimer);
         //  Show the number in the #show-number tag.
-        $("#timeleft").html("<h2>" + countDownTimer + "</h2>");
+        $("#timeleft").html("<h2>Time left: " + countDownTimer + "</h2>");
 
 
         //  Once number hits zero...
@@ -133,18 +133,30 @@ $(document).ready(function () {
         //  to the clearInterval function.
         clearInterval(intervalId);
         incorrectAnswers++;
+        clockRunning = false;
     }
 
-    
+
 
 
     function quizResults() {
         if (currentQuestion === questions.length) {
-            console.log("Quix Done");
+            console.log("Quiz Done");
             stop();
+            $("#answerblock").empty();
+            $("#questionblock").empty();
             //Append Wins and losses 
+            $("#correct-answers").html("<p id='correct'>Correct Answers: " + correctAnswers + "</p>");
+            $("#incorrect-answers").html("<p id='incorrect'>Incorrect Answers: " + incorrectAnswers + "</p>");
             //Then reset variables to 0
+            currentQuestion = 0;
+            correctAnswers = 0;
+            incorrectAnswers = 0;
+            countDownTimer = 15;
             //option to restart the game, a button that recalls start game function.
+            var newButton = $("<button id='reset-button'>Reset</button>");
+            $(".reset-button").append(newButton);
+
         } else {
             createQuestion(currentQuestion);
         }
@@ -156,196 +168,25 @@ $(document).ready(function () {
         //Create a div to display question
         //with the timer
         createQuestion(currentQuestion);
-
+        $("#start").hide();
         //Create a div to hold 
 
 
 
     })
 
-    $("#reset").on("click", function () {
+    $(document).on("click", "#reset-button", function(){
+        createQuestion(currentQuestion);
+        $("#correct-answers").empty();
+        $("#incorrect-answers").empty();
+        $("#reset-button").empty();
+    })
+    $("#reset-button").on("click", function () {
         //Create a div to display question
         //with the timer
-        createQuestion();
+        // createQuestion(currentQuestion);
 
 
 
     })
-    startTimer();
 })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    //Display 1st question along with the answer options for the user to select. Along with a 15second countdown timer.
-    //If timer reaches 0 before user answers a incorrect answer is added to the incorrect counter. Then it goes to the next question. and the timer resets.
-    //If user selects correct answer, a correct answer is added to the correct answer counter, the next question is displayed and the timer resets
-    //Once the users goes through all the questions. The correct and incorrect answers are displayed.
-    // Create a for loop to loop through array of options and creates a button for each.
-    //Create a click event 
-
-    //FUNCTIONS ======================================================
-
-    // function createQuestion(index) {
-    //     $("#questionblock").empty();
-    //     $("#answerblock").empty();
-    //     console.log(questions[index])
-    //     var question = $("<p>");
-    //     question.text(questions[index].question);
-    //     question.addClass("question");
-    //     $("#questionblock").append(question);
-    //     for (var i = 0; i < questions[index].answers.length; i++) {
-    //         console.log(questions[index].answers[i]);
-    //         var button = $("<button>");
-    //         button.text(questions[index].answers[i]);
-    //         button.addClass("answer btn btn-success");
-    //         button.attr("choice", questions[index].answers[i]);
-    //         $("#answerblock").append(button);
-    //     }
-    //     checkAnswer();
-
-    // }
-
-    // function checkAnswer() {
-    //     $(".answer").on("click", function () {
-    //         userPick = $(this).attr("choice");
-    //         console.log($(this).attr("choice"));
-    //         if (userPick === questions[currentQuestion].correctAnswer) {
-    //             console.log("Correct");
-    //             correctAnswers++;
-
-    //         } else {
-    //             incorrectAnswers++;
-    //         }
-    //         currentQuestion++;
-    //         createQuestion(currentQuestion);
-    //     })
-    // }
-
-    // // // for (var i = 0; i < questions.length; i++) {
-    // // //     $("<div>").append(questions.question);
-    // // //     $("<p>").append(questions.answers[i]);
-
-    // // }
-
-    // function startTimer() {
-
-    //     if (!clockRunning) {
-    //         intervalId = setInterval(decrment, 1000);
-    //         clockRunning = true;
-    //     }
-    // }
-
-    // function decrement() {
-
-    //     //  Decrease number by one.
-    //     countDownTimer--;
-
-    //     //  Show the number in the #show-number tag.
-    //     $("#timeleft").html("<h2>" + countDownTimer + "</h2>");
-
-
-    //     //  Once number hits zero...
-    //     if (countDownTimer === 0) {
-
-    //         //  ...run the stop function.
-    //         stop();
-
-    //         //  Alert the user that time is up.
-    //         alert("Time Up!");
-    //     }
-    // }
-
-    // function stop() {
-
-    //     //  Clears our intervalId
-    //     //  We just pass the name of the interval
-    //     //  to the clearInterval function.
-    //     clearInterval(intervalId);
-    //   }
-
-    //   function count() {
-
-    //     // DONE: increment time by 1, remember we cant use "this" here.
-    //     time++;
-
-    //     // DONE: Get the current time, pass that into the timeConverter function,
-    //     //       and save the result in a variable.
-    //     var converted = timeConverter(time);
-    //     console.log(converted);
-
-    //     // DONE: Use the variable we just created to show the converted time in the "display" div.
-    //     $("#display-timeleft").text(converted);
-    //   }
-    //   function timeConverter(t) {
-
-    //     var minutes = Math.floor(t / 60);
-    //     var seconds = t - (minutes * 60);
-
-    //     if (seconds < 10) {
-    //       seconds = "0" + seconds;
-    //     }
-
-    //     if (minutes === 0) {
-    //       minutes = "00";
-    //     }
-    //     else if (minutes < 10) {
-    //       minutes = "0" + minutes;
-    //     }
-
-    //     return minutes + ":" + seconds;
-    //   }
-
-
-
-    //write timer function to diplay timer and count down. And when timer runs out move to next question. Look at stop watch activity.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

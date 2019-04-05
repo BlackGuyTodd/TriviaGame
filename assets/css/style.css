@@ -1,5 +1,5 @@
 body {
-    background-image: url("https://www.pixelstalk.net/wp-content/uploads/2016/04/Logo-star-trek-wallpapers.png");
+    background-image: url("https://wallpaperplay.com/walls/full/4/a/3/13952.jpg");
     background-repeat: no-repeat;
 }
 
@@ -41,12 +41,17 @@ body {
 .question {
     color: white;
     font-size: 1.4em;
+    width: 40%;
+    margin-left: 30%;
+    margin-right: 30%
 }
 
 #start {
     padding: 50px;
-    text-align: center;
     background-color: grey;
+    width: 40%;
+    margin-left: 30%;
+    margin-right: 30%
 }
 
 .btn-success {
@@ -87,4 +92,51 @@ body {
 
 .timer-color {
     color: white;
+    font-weight: bolder;
+    font-family: 'HortaRegular';
+    font-size: 30px;
+    width: 40%;
+    margin-left: 30%;
+    margin-right: 30%;
+    text-align: center;
+}
+
+#questionblock {
+    width: 40%;
+    margin-left: 30%;
+    margin-right: 30%;
+    text-align: center;
+}
+
+#answerblock {
+    width: 40%;
+    margin-left: 30%;
+    margin-right: 30%;
+    text-align: center;
+}
+
+.question {
+    font-weight: bolder;
+    font-family: 'HortaRegular';
+    font-size: 30px;
+}
+
+button {
+    margin: 15px;
+}
+
+section {
+    font-weight: bolder;
+    font-family: 'HortaRegular';
+    font-size: 30px;
+    width: 40%;
+    margin-left: 30%;
+    margin-right: 30%;
+    text-align: center;
+    background-color: whitesmoke;
+}
+
+#display-timeleft {
+    background: rgba(245, 245,245, 1);
+    
 }
